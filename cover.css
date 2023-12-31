@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*Input type submit*/
+input[type=submit]{
+  background-color: #03f45f;
+  border: none;
+  color: white;
+  padding: 9px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 100px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type=submit]:hover{
+  background-color: rgba(255, 255, 255, 0); 
+  color: #03f45f;
+  border: 1px solid #03f45f;
+}
+
+/* Custom default button */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body{
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, 0.0);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+.cover-container {
+  max-width: 42em;
+  padding-top: 1%;
+  color: aquamarine;
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  color: #ffffff80;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.footer {
+  position:fixed;
+  left: 0;
+  bottom: 0px;
+  width:-webkit-fill-available;
+  background-color:#333;
+  color: white;
+  text-align: center;
+  height:auto;
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #000000 0%,
+    #160a23 29%,
+    #2c010f 67%,
+    #302f02 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+.waviy {
+  position: relative;
+  position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+}
+.waviy span {
+  position: relative;
+  display:inline-flex;
+  font-size: 100px;
+  color: #000000;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i));
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+/**registration page**/
+
+table{
+    width: 50%;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid black;*/
+    margin-top: 15px;
+}   
+
+table tr td input[type=text],input[type=email],input[type=date],#time{
+  width: 100%;
+  font-size: 20px;
+}
+
+table tr td{
+    padding: 7px;
+    font-size: 20px;
+}
+
+table tr:nth-child(11) td {
+    padding: 10px;
+    text-align: center;
+}
+
+.message {
+  display: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #007acc; /* Change to the color that suits your design */
+  margin: 10px auto;
+  max-width: 600px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #007acc;
+  border-radius: 5px;
+  background-color: #f0f8ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .message {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    width: 80%; /* Adjust the width for smaller screens */
+  }
+}
+
+
+/**Admin page*/
+.login {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  width: 350px;
+  padding: 40px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.login:hover {
+  box-shadow: none;
+}
+
+.login h1 {
+  font-family: 'Roboto Mono', monospace;
+  margin: 10px 60px;
+  color: #03f45f;
+  font-weight: 700;
+}
+
+.login form {
+  font-family: 'Inconsolata', monospace;
+}
+
+.login form label {
+  font-size: 12px;
+  margin: 5px 60px;
+  color: #03f45f;
+}
+
+.login form input[type=text],
+.login form input[type=password] {
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin: 10px 0px 20px 60px;
+  background-color: transparent;
+}
+
+.login form #toggleIcon {
+  cursor: pointer;
+  color: #03f45f;
+}
+
+.login form input:focus {
+  outline: none;
+}
+
+.error-message {
+  font-family: 'Inconsolata', monospace;
+  color: #ff0000; /* Red color for error messages */
+  margin: 10px 60px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    width: 300px; /* Adjust the width for smaller screens */
+  }
+
+  .login h1 {
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+
+  .login form label,
+  .login form input[type=text],
+  .login form input[type=password] {
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+}
+/*Contact form*/
+
+
+.contact {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  display: flex; /* Use flexbox to make children side by side */
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact p {
+  color: #afafb6;
+}
+
+.contact .left {
+  width: 20%;
+  border-right: solid 1px black;
+  padding-right: 20px; /* Add padding to create a separation between left and right */
+  text-align: center;
+}
+
+.contact .left span {
+  margin-top: 20px;
+  color: #03f45f;
+}
+
+.contact .left h3 {
+  color: #03f45f;
+}
+
+.contact .right {
+  width: 80%; /* Adjusted width to 60% to make a total of 100% with the left */
+  padding-left: 20px; /* Add padding to create a separation between left and right */
+  margin-left: 40px;
+}
+
+.contact .right h2 {
+  color: #03f45f;
+}
+
+.contact .right input[type=text], .contact .right input[type=email] {
+  font-family: 'Inconsolata', monospace;
+  height: 50px;
+  width: 100%; /* Adjusted width for responsiveness */
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color:#F0F1F8;
+}
+
+#message {
+  height: 150px;
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .contact {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: flex-start; /* Align items to the start on small screens */
+  }
+
+  .contact .left,
+  .contact .right {
+      width: 100%; /* Full width on small screens */
+      padding: 0; /* Remove padding on small screens */
+      margin: 0; /* Remove margin on small screens */
+      border-right: none; /* Remove border on small screens */
+      text-align: left; /* Align text to the left on small screens */
+  }
+
+  .contact .right input[type=text],
+  .contact .right input[type=email] {
+      width: 100%; /* Full width on small screens */
+  }
+}
+
+@media screen and (max-width: 1150px){
+  .contact .left{
+      border-right: none;
+  }
+}
+
+.m-message {
+  display: none;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.m-message .success-message {
+  color: #03f45f;
+}
+
+.m-message .error-message {
+  color: #ff5c5c;
+}
