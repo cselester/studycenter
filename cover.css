@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Added for consistent box-sizing */
 }
 
-/*Input type submit*/
-input[type=submit]{
+/* Input type submit */
+input[type="submit"] {
   background-color: #03f45f;
   border: none;
   color: white;
@@ -16,14 +17,14 @@ input[type=submit]{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 100px;
-  transition-duration: 0.4s;
+  margin: 4px auto; /* Centered the button */
+  transition: background-color 0.4s, color 0.4s; /* Improved transition readability */
   cursor: pointer;
   border-radius: 10px;
 }
 
-input[type=submit]:hover{
-  background-color: rgba(255, 255, 255, 0); 
+input[type="submit"]:hover {
+  background-color: transparent; /* Simplified rgba(255, 255, 255, 0) */
   color: #03f45f;
   border: 1px solid #03f45f;
 }
@@ -36,14 +37,17 @@ input[type=submit]:hover{
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-
 /*
  * Base structure
  */
 
-body{
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, 0.0);
+body {
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+  font-family: "Roboto Condensed", sans-serif; /* Added default font */
+  background-color: #ffffff; /* Set a consistent white background color */
+  min-height: 100vh; /* Ensure the body covers the full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .cover-container {
@@ -52,19 +56,18 @@ body{
   color: aquamarine;
 }
 
-
 /*
  * Header
  */
 
 .nav-masthead .nav-link {
   color: #ffffff80;
-  border-bottom: .25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
 }
 
 .nav-masthead .nav-link + .nav-link {
@@ -96,23 +99,22 @@ body{
 }
 
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
 }
 .footer {
-  position:fixed;
+  position: fixed;
   left: 0;
   bottom: 0px;
-  width:-webkit-fill-available;
-  background-color:#333;
+  width: -webkit-fill-available;
+  background-color: #333;
   color: white;
   text-align: center;
-  height:auto;
+  height: auto;
 }
 
-.animate-charcter
-{
-   text-transform: uppercase;
+.animate-charcter {
+  text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
     #000000 0%,
@@ -130,7 +132,6 @@ body{
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      
 }
 
 @keyframes textclip {
@@ -139,58 +140,61 @@ body{
   }
 }
 
-
 .waviy {
   position: relative;
   position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
 }
 .waviy span {
   position: relative;
-  display:inline-flex;
+  display: inline-flex;
   font-size: 100px;
   color: #000000;
   text-transform: uppercase;
   animation: flip 2s infinite;
-  animation-delay: calc(.2s * var(--i));
+  animation-delay: calc(0.2s * var(--i));
 }
 @keyframes flip {
-  0%,80% {
-    transform: rotateY(360deg) 
+  0%,
+  80% {
+    transform: rotateY(360deg);
   }
 }
 /**registration page**/
 
-table{
-    width: 50%;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-    /*border: 1px solid black;*/
-    margin-top: 15px;
-}   
+table {
+  width: 50%;
+  font-family: "Roboto Condensed", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  /*border: 1px solid black;*/
+  margin-top: 15px;
+}
 
-table tr td input[type=text],input[type=email],input[type=date],#time{
+table tr td input[type="text"],
+input[type="email"],
+input[type="date"],
+#time {
   width: 100%;
   font-size: 20px;
 }
 
-table tr td{
-    padding: 7px;
-    font-size: 20px;
+table tr td {
+  padding: 7px;
+  font-size: 20px;
 }
 
 table tr:nth-child(11) td {
-    padding: 10px;
-    text-align: center;
+  padding: 10px;
+  text-align: center;
 }
 
 .message {
   display: none;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   color: #007acc; /* Change to the color that suits your design */
   margin: 10px auto;
   max-width: 600px;
@@ -205,7 +209,7 @@ table tr:nth-child(11) td {
 /* Responsive Styling */
 @media (max-width: 768px) {
   .message {
-    max-width: 50%;
+    max-width: 90%; /* Adjusted for better responsiveness */
   }
 }
 
@@ -214,7 +218,6 @@ table tr:nth-child(11) td {
     width: 80%; /* Adjust the width for smaller screens */
   }
 }
-
 
 /**Admin page*/
 .login {
@@ -234,14 +237,14 @@ table tr:nth-child(11) td {
 }
 
 .login h1 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   margin: 10px 60px;
   color: #03f45f;
   font-weight: 700;
 }
 
 .login form {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
 }
 
 .login form label {
@@ -250,9 +253,9 @@ table tr:nth-child(11) td {
   color: #03f45f;
 }
 
-.login form input[type=text],
-.login form input[type=password] {
-  font-family: 'Inconsolata', monospace;
+.login form input[type="text"],
+.login form input[type="password"] {
+  font-family: "Inconsolata", monospace;
   font-size: 20px;
   border: none;
   border-bottom: 1px solid rgb(255, 255, 255);
@@ -270,7 +273,7 @@ table tr:nth-child(11) td {
 }
 
 .error-message {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   color: #ff0000; /* Red color for error messages */
   margin: 10px 60px;
   text-align: center;
@@ -286,14 +289,82 @@ table tr:nth-child(11) td {
   }
 
   .login form label,
-  .login form input[type=text],
-  .login form input[type=password] {
+  .login form input[type="text"],
+  .login form input[type="password"] {
     margin: 10px 0; /* Adjust margin for smaller screens */
   }
 }
-/*Contact form*/
 
+/* Admin Page Enhancements */
+.login-box {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 400px;
+  padding: 40px;
+  margin: 80px auto;
+  color: #fff;
+}
 
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Roboto Mono", monospace;
+  color: #03f45f;
+}
+
+.login-box .user-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #03f45f;
+  background: transparent;
+  outline: none;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #03f45f;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03f45f;
+  font-size: 12px;
+}
+
+.login-box button {
+  background-color: #03f45f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #028a3d;
+}
+
+/* Contact form */
 .contact {
   margin-top: 25px;
   margin-left: auto;
@@ -302,7 +373,8 @@ table tr:nth-child(11) td {
   background-color: #fff;
   border-radius: 10px;
   padding: 40px;
-  display: flex; /* Use flexbox to make children side by side */
+  display: flex;
+  flex-wrap: wrap; /* Added for better responsiveness */
   align-items: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -337,8 +409,9 @@ table tr:nth-child(11) td {
   color: #03f45f;
 }
 
-.contact .right input[type=text], .contact .right input[type=email] {
-  font-family: 'Inconsolata', monospace;
+.contact .right input[type="text"],
+.contact .right input[type="email"] {
+  font-family: "Inconsolata", monospace;
   height: 50px;
   width: 100%; /* Adjusted width for responsiveness */
   padding: 5px;
@@ -347,7 +420,7 @@ table tr:nth-child(11) td {
   font-size: 16px;
   border: none;
   outline: none;
-  background-color:#F0F1F8;
+  background-color: #f0f1f8;
 }
 
 #message {
@@ -357,28 +430,39 @@ table tr:nth-child(11) td {
 /* Media Queries for responsiveness */
 @media screen and (max-width: 768px) {
   .contact {
-      flex-direction: column; /* Stack items vertically on small screens */
-      align-items: flex-start; /* Align items to the start on small screens */
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: flex-start;
   }
 
   .contact .left,
   .contact .right {
-      width: 100%; /* Full width on small screens */
-      padding: 0; /* Remove padding on small screens */
-      margin: 0; /* Remove margin on small screens */
-      border-right: none; /* Remove border on small screens */
-      text-align: left; /* Align text to the left on small screens */
+    width: 100%; /* Full width on small screens */
+    padding: 0;
+    margin: 0;
+    border-right: none;
+    text-align: left;
   }
 
-  .contact .right input[type=text],
-  .contact .right input[type=email] {
-      width: 100%; /* Full width on small screens */
+  .contact .right input[type="text"],
+  .contact .right input[type="email"] {
+    width: 100%; /* Full width on small screens */
   }
 }
 
-@media screen and (max-width: 1150px){
-  .contact .left{
-      border-right: none;
+.error-messagec {
+  color: red;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.success-messagec {
+  color: green;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 1150px) {
+  .contact .left {
+    border-right: none;
   }
 }
 
@@ -401,4 +485,79 @@ table tr:nth-child(11) td {
 
 .m-message .error-message {
   color: #ff5c5c;
+}
+
+/* Contact Page Enhancements */
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+.container1 .content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.container1 .left-side {
+  flex: 1;
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+.container1 .right-side {
+  flex: 2;
+  padding: 20px;
+}
+
+.container1 .right-side .input-box input,
+.container1 .right-side .input-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.container1 .right-side .button input {
+  background-color: #03f45f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.container1 .right-side .button input:hover {
+  background-color: #028a3d;
+}
+
+/* Responsive Enhancements */
+@media screen and (max-width: 768px) {
+  .container1 {
+    flex-direction: column;
+  }
+
+  .container1 .left-side,
+  .container1 .right-side {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
 }

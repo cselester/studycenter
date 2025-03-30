@@ -1,9 +1,10 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_name'])) {
-    header('Location:admin.php');
+session_start(); // Start the session
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: admin.php"); // Redirect to login if not logged in
     exit();
 }
+include 'db.php'; // Ensure this is included before using $con
 ?>
 <!DOCTYPE html>
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
@@ -33,15 +34,12 @@ if (!isset($_SESSION['user_name'])) {
           </a>
         </li>
        
-        
-       
         <li>
           <a href="messages.php">
             <i class='bx bx-message' ></i>
             <span class="links_name">Messages</span>
           </a>
         </li>
-        
         
         <li class="log_out">
           <a href="logout.php">
@@ -82,7 +80,7 @@ if (!isset($_SESSION['user_name'])) {
 $sql = "SELECT * FROM registration";
 
 // Run SQL query
-$val=mysqli_query($con, $sql);
+$val = mysqli_query($conn, $sql); // Ensure $con is defined
 $num=1;
 while($r=mysqli_fetch_array($val))
 {

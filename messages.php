@@ -1,9 +1,10 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_name'])) {
-    header('Location:admin.php');
+session_start(); // Start the session
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: admin.php"); // Redirect to login if not logged in
     exit();
 }
+include 'db.php';
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +77,7 @@ if (!isset($_SESSION['user_name'])) {
 $sql = "SELECT * FROM contact";
 
 // Run SQL query
-$val=mysqli_query($con, $sql);
+$val=mysqli_query($conn, $sql);
 $num=1;
 while($r=mysqli_fetch_array($val))
 {

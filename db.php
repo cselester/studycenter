@@ -1,12 +1,12 @@
 <?php
-//data base conection
-$server = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "ssms";
-$con = mysqli_connect($server, $username, $password, $dbname,);
 
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-  ?>
+?>
